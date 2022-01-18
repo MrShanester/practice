@@ -103,3 +103,14 @@
 
 # p compare("ABCDEFG", "ZBCXEOG"
 # )
+
+# Array
+
+# a = [1,2,3,4,5,6,7]
+# i = 8
+# 12.times do 
+#   a << i 
+#   i += 1
+# end
+
+# p a
