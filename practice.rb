@@ -170,36 +170,36 @@
 # return output
 
 
-def merge(array_one, array_two)
-  output = []
-  array_one.each do |hash|
-    return_hash = {}
-    return_hash[:title] = hash[:title]
-    name_id = hash[:submitted_by]
-    array_two.each do |h|
-      if h[:user_id] == name_id
-        return_hash[:submitted_by] = h[:name]
-      end
-    end
-    return_hash[:likes] = hash[:likes]
-    output << return_hash 
-  end
-  return output
-end
+# def merge(array_one, array_two)
+#   output = []
+#   array_one.each do |hash|
+#     return_hash = {}
+#     return_hash[:title] = hash[:title]
+#     name_id = hash[:submitted_by]
+#     array_two.each do |h|
+#       if h[:user_id] == name_id
+#         return_hash[:submitted_by] = h[:name]
+#       end
+#     end
+#     return_hash[:likes] = hash[:likes]
+#     output << return_hash 
+#   end
+#   return output
+# end
 
-p merge([
-  {title: 'Me Eating Pizza', submitted_by: 231, likes: 1549},
-  {title: 'i never knew how cool i was until now', submitted_by: 989, likes: 3},
-  {title: 'best selfie evar!!!', submitted_by: 111, likes: 1092},
-  {title: 'Mondays are the worst', submitted_by: 403, likes: 644},
-  {title: "Tuesdays are hell", submitted_by: 603, likes: 1}
-], [
-    {user_id: 403, name: "Aunty Em"},
-    {user_id: 231, name: "Joelle P."},
-    {user_id: 989, name: "Lyndon Johnson"},
-    {user_id: 111, name: "Patti Q."},
-    {user_id: 603, name: "Shane N."}
-])
+# p merge([
+#   {title: 'Me Eating Pizza', submitted_by: 231, likes: 1549},
+#   {title: 'i never knew how cool i was until now', submitted_by: 989, likes: 3},
+#   {title: 'best selfie evar!!!', submitted_by: 111, likes: 1092},
+#   {title: 'Mondays are the worst', submitted_by: 403, likes: 644},
+#   {title: "Tuesdays are hell", submitted_by: 603, likes: 1}
+# ], [
+#     {user_id: 403, name: "Aunty Em"},
+#     {user_id: 231, name: "Joelle P."},
+#     {user_id: 989, name: "Lyndon Johnson"},
+#     {user_id: 111, name: "Patti Q."},
+#     {user_id: 603, name: "Shane N."}
+# ])
 
 # hash = {"a" => 1, "b" => 2, "c" => 3}
 # return_hash = {}
@@ -207,3 +207,33 @@ p merge([
 #   return_hash[num[1]] = num[0]
 # end
 # p return_hash
+
+# Input: [2, 5, 3, 1, 0, 7, 11]
+# Output: [3, 7]
+
+# Input: [1, 2, 3, 4, 5]
+# Output: false (While 1, 2, 3, and 4 altogether add up to 10, we're seeking just one pair of numbers.)
+
+# create hash with array numbers set to true
+# iterate through array 
+# subtract array number from ten
+# see if remainder is in hash
+# if so, return the pairing
+
+def ten?(array)
+  hash = {}
+  array.each do |num|
+    hash[num] = true
+  end
+  array.each do |n|
+    temp = 10 - n
+    if hash[temp] && n != temp
+      return_array = []
+      return_array << n
+      return_array << temp
+      return return_array
+    end
+  end
+end
+
+p ten?([2, 5, 3, 1, 0, 7, 11])
