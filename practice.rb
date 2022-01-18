@@ -173,21 +173,18 @@
 def merge(array_one, array_two)
   output = []
   array_one.each do |hash|
-    name = []
     return_hash = {}
     return_hash[:title] = hash[:title]
     name_id = hash[:submitted_by]
     array_two.each do |h|
       if h[:user_id] == name_id
-        name << h[:name]
+        return_hash[:submitted_by] = h[:name]
       end
     end
-    return_hash[:submitted_by] = name[0]
     return_hash[:likes] = hash[:likes]
     output << return_hash 
   end
   return output
-  
 end
 
 p merge([
@@ -196,10 +193,17 @@ p merge([
   {title: 'best selfie evar!!!', submitted_by: 111, likes: 1092},
   {title: 'Mondays are the worst', submitted_by: 403, likes: 644},
   {title: "Tuesdays are hell", submitted_by: 603, likes: 1}
-],  [
+], [
     {user_id: 403, name: "Aunty Em"},
     {user_id: 231, name: "Joelle P."},
     {user_id: 989, name: "Lyndon Johnson"},
     {user_id: 111, name: "Patti Q."},
     {user_id: 603, name: "Shane N."}
-  ])
+])
+
+# hash = {"a" => 1, "b" => 2, "c" => 3}
+# return_hash = {}
+# hash.each do |num|
+#   return_hash[num[1]] = num[0]
+# end
+# p return_hash
