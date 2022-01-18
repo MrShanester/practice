@@ -116,13 +116,90 @@
 # p a
 
 # hash
-h = {
-  name: "Shane",
-  sex: "M",
-  height: "5' 10",
-  hair: "Blonde"
-}
+# h = {
+#   name: "Shane",
+#   sex: "M",
+#   height: "5' 10",
+#   hair: "Blonde"
+# }
 
-h["eye_color"] = "Green"
+# h["eye_color"] = "Green"
 
-p h
+# p h
+
+# function
+
+# def is_even?(number)
+#   if number % 2 == 0 
+#     return true
+#   else
+#     return false
+#   end
+# end
+
+# p  is_even?(3)
+
+# [
+#   {title: 'Me Eating Pizza', submitted_by: 231, likes: 1549},
+#   {title: 'i never knew how cool i was until now', submitted_by: 989, likes: 3},
+#   {title: 'best selfie evar!!!', submitted_by: 111, likes: 1092},
+#   {title: 'Mondays are the worst', submitted_by: 403, likes: 644}
+#   {title: "Tuesdays are hell", submitted_by: 603, likes: 1}
+# ]
+  
+# [
+#   {user_id: 403, name: "Aunty Em"},
+#   {user_id: 231, name: "Joelle P."},
+#   {user_id: 989, name: "Lyndon Johnson"},
+#   {user_id: 111, name: "Patti Q."},
+#   {user_id: 603, name: "Shane N."}
+# ]
+    
+# [
+#   {title: 'Me Eating Pizza', submitted_by: "Joelle P.", likes: 1549},
+#   {title: 'i never knew how cool i was until now', submitted_by: "Lyndon Johnson", likes: 3},
+#   {title: 'best selfie evar!!!', submitted_by: "Patti Q.", likes: 1092},
+#   {title: 'Mondays are the worst', submitted_by: "Aunty Em", likes: 644},
+#   {title: "Tuesdays are hell", submitted_by: "Shane N.", likes: 1}
+# ]
+
+# Step one, array
+# for inex on first array, 
+# make a new hash, push title from first array, search  by id to push name from second array, push likes from first array
+# push that hash into output array
+# return output
+
+
+def merge(array_one, array_two)
+  output = []
+  array_one.each do |hash|
+    name = []
+    return_hash = {}
+    return_hash[:title] = hash[:title]
+    name_id = hash[:submitted_by]
+    array_two.each do |h|
+      if h[:user_id] == name_id
+        name << h[:name]
+      end
+    end
+    return_hash[:submitted_by] = name[0]
+    return_hash[:likes] = hash[:likes]
+    output << return_hash 
+  end
+  return output
+  
+end
+
+p merge([
+  {title: 'Me Eating Pizza', submitted_by: 231, likes: 1549},
+  {title: 'i never knew how cool i was until now', submitted_by: 989, likes: 3},
+  {title: 'best selfie evar!!!', submitted_by: 111, likes: 1092},
+  {title: 'Mondays are the worst', submitted_by: 403, likes: 644},
+  {title: "Tuesdays are hell", submitted_by: 603, likes: 1}
+],  [
+    {user_id: 403, name: "Aunty Em"},
+    {user_id: 231, name: "Joelle P."},
+    {user_id: 989, name: "Lyndon Johnson"},
+    {user_id: 111, name: "Patti Q."},
+    {user_id: 603, name: "Shane N."}
+  ])
