@@ -114,3 +114,15 @@
 # end
 
 # p a
+
+# hash
+h = {
+  name: "Shane",
+  sex: "M",
+  height: "5' 10",
+  hair: "Blonde"
+}
+
+h["eye_color"] = "Green"
+
+p h
