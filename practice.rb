@@ -238,23 +238,53 @@
 
 # p ten?([2, 5, 3, 1, 0, 7, 11])
 
-def monkey(input)
-  alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-  output = ""
-  input.length.times do 
-    output += alphabet.sample
-  end
-  return output
-end
+# def monkey(input)
+#   alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+#   output = ""
+#   input.length.times do 
+#     output += alphabet.sample
+#   end
+#   return output
+# end
 
-def monkey_times(input)
-  count = 0
-  while true
-    count += 1
-    if monkey(input) == input
-      return "It took #{count} tries for the computer to generate the word #{input.upcase}."
+# def monkey_times(input)
+#   count = 0
+#   while true
+#     count += 1
+#     if monkey(input) == input
+#       return "It took #{count} tries for the computer to generate the word #{input.upcase}."
+#     end
+#   end
+# end
+
+# p monkey_times("monkey")
+
+# Input: [1, 2, 3, 4, 5, 6], [6, 3, 2]
+# Output: true
+
+# Input: [1, 2, 3, 4, 5, 6], [6, 3, 7]
+# Output: false
+
+# Input: [1, 2, 3], [2, 3]
+# Output: true
+
+# create def
+
+# turn array one inteo hash, keys are numbers, value is true
+# iterate through array two, if returns false for key, then return false for def
+# if all return true, return true for def
+
+def subset(array_one, array_two)
+  hash = {}
+  array_one.each do |num|
+    hash[num] = true
+  end
+  array_two.each do |num|
+    if hash[num] == nil
+      return false
     end
   end
+  return true
 end
 
-p monkey_times("help")
+p subset([1, 2, 3, 4, 5, 6], [6, 3, 7])
