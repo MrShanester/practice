@@ -280,11 +280,9 @@ def subset(array_one, array_two)
     hash[num] = true
   end
   array_two.each do |num|
-    if hash[num] == nil
-      return false
-    end
+    return false unless hash[num]
   end
-  return true
+  true
 end
 
 p subset([1, 2, 3, 4, 5, 6], [6, 3, 7])
