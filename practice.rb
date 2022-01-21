@@ -220,20 +220,41 @@
 # see if remainder is in hash
 # if so, return the pairing
 
-def ten?(array)
-  hash = {}
-  array.each do |num|
-    hash[num] = true
+# def ten?(array)
+#   hash = {}
+#   array.each do |num|
+#     hash[num] = true
+#   end
+#   array.each do |n|
+#     temp = 10 - n
+#     if hash[temp] && n != temp
+#       return_array = []
+#       return_array << n
+#       return_array << temp
+#       return return_array
+#     end
+#   end
+# end
+
+# p ten?([2, 5, 3, 1, 0, 7, 11])
+
+def monkey(input)
+  alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+  output = ""
+  input.length.times do 
+    output += alphabet.sample
   end
-  array.each do |n|
-    temp = 10 - n
-    if hash[temp] && n != temp
-      return_array = []
-      return_array << n
-      return_array << temp
-      return return_array
+  return output
+end
+
+def monkey_times(input)
+  count = 0
+  while true
+    count += 1
+    if monkey(input) == input
+      return "It took #{count} tries for the computer to generate the word #{input.upcase}."
     end
   end
 end
 
-p ten?([2, 5, 3, 1, 0, 7, 11])
+p monkey_times("help")

@@ -14,14 +14,14 @@
               <p class="card-text"></p>
               <h2>{{ repo.name }}</h2>
               <br />
+              <h3>
+                <span>{{ (repo.watchers_count + repo.forks_count) / 100 }}</span>
+                Popularity Points!
+              </h3>
+              <br />
               <p>{{ repo.stargazers_count }} Stargazers</p>
               <p>{{ repo.watchers_count }} Watchers</p>
               <p>{{ repo.forks_count }} Forks</p>
-              <p>
-                <span>{{ (repo.watchers_count + repo.forks_count) / 100 }}</span>
-                Popularity Points!
-              </p>
-              <!-- <p>{{ repo }}</p> -->
             </div>
           </div>
           <div class="selected2">
