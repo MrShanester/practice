@@ -274,15 +274,31 @@
 # iterate through array two, if returns false for key, then return false for def
 # if all return true, return true for def
 
-def subset(array_one, array_two)
+# def subset(array_one, array_two)
+#   hash = {}
+#   array_one.each do |num|
+#     hash[num] = true
+#   end
+#   array_two.each do |num|
+#     return false unless hash[num]
+#   end
+#   true
+# end
+
+# p subset([1, 2, 3, 4, 5, 6], [6, 3, 7])
+
+# if a value appears twice print first value
+
+def duplicate(array)
   hash = {}
-  array_one.each do |num|
-    hash[num] = true
+  hash[array[0]] = true
+  i = 1
+  while i < array.length
+    return "The first duplicate is #{array[i]}" if hash[array[i]]
+    hash[array[i]] = true
+    i += 1
   end
-  array_two.each do |num|
-    return false unless hash[num]
-  end
-  true
+  "No Duplicates"
 end
 
-p subset([1, 2, 3, 4, 5, 6], [6, 3, 7])
+puts duplicate([2, 3, 1, 4, 5, 2, 6])
