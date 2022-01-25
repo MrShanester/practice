@@ -289,16 +289,36 @@
 
 # if a value appears twice print first value
 
-def duplicate(array)
-  hash = {}
-  hash[array[0]] = true
-  i = 1
-  while i < array.length
-    return "The first duplicate is #{array[i]}" if hash[array[i]]
-    hash[array[i]] = true
-    i += 1
+# def duplicate(array)
+#   hash = {}
+#   hash[array[0]] = true
+#   i = 1
+#   while i < array.length
+#     return "The first duplicate is #{array[i]}" if hash[array[i]]
+#     hash[array[i]] = true
+#     i += 1
+#   end
+#   "No Duplicates"
+# end
+
+# puts duplicate([2, 3, 1, 4, 5, 2, 6])
+
+def leap?
+  puts "What is your planet's name?"
+  planet = gets.chomp
+  puts "How many hours are in one day on #{planet}?"
+  hours = gets.chomp.to_f
+  puts "How many days does it take for #{planet} to rotate around it's home star?"
+  year = gets.chomp.to_f
+  yearly_h = (year * hours)
+  left_over = yearly_h % hours
+  needed_years = hours / left_over
+
+  if yearly_h % hours == 0
+    puts "#{planet} needs no leap years."
+  else
+    puts "#{planet} needs a leap year every #{needed_years} cycles."
   end
-  "No Duplicates"
 end
 
-puts duplicate([2, 3, 1, 4, 5, 2, 6])
+leap?()
