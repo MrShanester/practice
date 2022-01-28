@@ -335,23 +335,90 @@
 # minus left and right in ||
 # return difference
 
-def diagonals(matrix)
-  i = 0
-  j = matrix.length - 1
-  right_diag = 0
-  left_diag = 0
-  matrix.each do |array|
-    right_diag += array[i]
-    left_diag += array[j]
+# def diagonals(matrix)
+#   i = 0
+#   j = matrix.length - 1
+#   right_diag = 0
+#   left_diag = 0
+#   matrix.each do |array|
+#     right_diag += array[i]
+#     left_diag += array[j]
+#     i += 1
+#     j -= 1
+#   end
+#   if right_diag > left_diag
+#     output = right_diag - left_diag
+#   else
+#     output = left_diag - right_diag
+#   end
+#   return output
+# end
+
+# p diagonals(input)
+
+# input = "(){}[]"
+
+
+# def valid?(string)
+#   stack = []
+#   i = 0
+#   while i < string.length
+#     if string[i] == "(" || string[i] == "[" || string[i] == "{"
+#       stack << string[i]
+#     elsif string[i] == ")" && stack[0] == "("
+#       stack.pop
+#     elsif string[i] == "}" && stack[0] == "{"
+#       stack.pop
+#     elsif string[i] == "]" && stack[0] == "["
+#       stack.pop
+#     else
+#       return false
+#     end 
+#     i += 1
+#   end
+#   return false if stack[0]
+#   true
+# end
+
+# p valid?(input)
+
+# input = 4
+
+# output = [['','','',#], ['','',#,#], ['',#,#,#], [#,#,#,#]]
+
+# make def
+# make output array
+# i = 1
+# j = input.length - 1  
+# input.length.times do
+# make temp array = []
+# j.times do 
+#   temp_array << ""
+# end
+# i.times do 
+#   temp_array << "#"
+# end
+# output_array << temp
+# return output array
+
+input = 4
+
+def hash_matrix(number)
+  output = []
+  i = 1
+  j = number - 1
+  number.times do
+    temp_array = []
+    j.times do 
+      temp_array << " "
+    end
+    i.times do 
+      temp_array << "#"
+    end
     i += 1
     j -= 1
+    puts temp_array.join("")
   end
-  if right_diag > left_diag
-    output = right_diag - left_diag
-  else
-    output = left_diag - right_diag
-  end
-  return output
 end
 
-p diagonals(input)
+hash_matrix(4)
