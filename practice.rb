@@ -303,22 +303,55 @@
 
 # puts duplicate([2, 3, 1, 4, 5, 2, 6])
 
-def leap?
-  puts "What is your planet's name?"
-  planet = gets.chomp
-  puts "How many hours are in one day on #{planet}?"
-  hours = gets.chomp.to_f
-  puts "How many days does it take for #{planet} to rotate around it's home star?"
-  year = gets.chomp.to_f
-  yearly_h = (year * hours)
-  left_over = yearly_h % hours
-  needed_years = hours / left_over
+# def leap?
+#   puts "What is your planet's name?"
+#   planet = gets.chomp
+#   puts "How many hours are in one day on #{planet}?"
+#   hours = gets.chomp.to_f
+#   puts "How many days does it take for #{planet} to rotate around it's home star?"
+#   year = gets.chomp.to_f
+#   yearly_h = (year * hours)
+#   left_over = yearly_h % hours
+#   needed_years = hours / left_over
 
-  if yearly_h % hours == 0
-    puts "#{planet} needs no leap years."
-  else
-    puts "#{planet} needs a leap year every #{needed_years} cycles."
+#   if yearly_h % hours == 0
+#     puts "#{planet} needs no leap years."
+#   else
+#     puts "#{planet} needs a leap year every #{needed_years} cycles."
+#   end
+# end
+
+# leap?()
+
+# Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+
+# input = [[1,2,3], [4,5,6], [9,8,9]]
+# output = 2
+
+# count the length of our matrix
+# index = 0, j = matrix.length - 1
+# right_diag, left_diag
+# Iterate through the matrix, Right diag += array[i}, Right diag += array[i}
+# minus left and right in ||
+# return difference
+
+def diagonals(matrix)
+  i = 0
+  j = matrix.length - 1
+  right_diag = 0
+  left_diag = 0
+  matrix.each do |array|
+    right_diag += array[i]
+    left_diag += array[j]
+    i += 1
+    j -= 1
   end
+  if right_diag > left_diag
+    output = right_diag - left_diag
+  else
+    output = left_diag - right_diag
+  end
+  return output
 end
 
-leap?()
+p diagonals(input)
