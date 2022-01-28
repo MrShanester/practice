@@ -401,24 +401,37 @@
 # output_array << temp
 # return output array
 
+# input = 4
+
+# def hash_matrix(number)
+#   output = []
+#   i = 1
+#   j = number - 1
+#   number.times do
+#     temp_array = []
+#     j.times do 
+#       temp_array << " "
+#     end
+#     i.times do 
+#       temp_array << "#"
+#     end
+#     i += 1
+#     j -= 1
+#     puts temp_array.join("")
+#   end
+# end
+
+# hash_matrix(4)
+
 input = 4
 
-def hash_matrix(number)
-  output = []
-  i = 1
-  j = number - 1
-  number.times do
-    temp_array = []
-    j.times do 
-      temp_array << " "
-    end
-    i.times do 
-      temp_array << "#"
-    end
-    i += 1
-    j -= 1
-    puts temp_array.join("")
+def staircase(num)
+  stair = ' ' * num
+  num.times do
+    stair += "#"
+    stair.slice!(0)
+    puts stair
   end
 end
 
-hash_matrix(4)
+staircase(input)
