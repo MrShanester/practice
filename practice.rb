@@ -423,15 +423,32 @@
 
 # hash_matrix(4)
 
-input = 4
+# input = 10
 
-def staircase(num)
-  stair = ' ' * num
-  num.times do
-    stair += "#"
-    stair.slice!(0)
-    puts stair
+# def staircase(num)
+#   stair = ' ' * num
+#   num.times do
+#     stair += "#"
+#     stair.slice!(0)
+#     puts stair
+#   end
+# end
+
+# staircase(input)
+
+# FIZZBUZZ
+
+def buzz?(input)
+  if input % 15 == 0
+    output = "FIZZBUZZ"
+  elsif input % 5 == 0
+    output = "FIZZ"
+  elsif input % 3 == 0
+    output = "BUZZ"
+  else
+    output = "NOT BUZZABLE"
   end
+  return output
 end
 
-staircase(input)
+puts buzz?(476)
