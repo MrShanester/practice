@@ -438,17 +438,34 @@
 
 # FIZZBUZZ
 
-def buzz?(input)
-  if input % 15 == 0
-    output = "FIZZBUZZ"
-  elsif input % 5 == 0
-    output = "FIZZ"
-  elsif input % 3 == 0
-    output = "BUZZ"
-  else
-    output = "NOT BUZZABLE"
+# def buzz?(input)
+#   if input % 15 == 0
+#     output = "FIZZBUZZ"
+#   elsif input % 5 == 0
+#     output = "FIZZ"
+#   elsif input % 3 == 0
+#     output = "BUZZ"
+#   else
+#     output = "NOT BUZZABLE"
+#   end
+#   return output
+# end
+
+# puts buzz?(476)
+
+#LeapYear
+
+def leap(input)
+  if input % 4 == 0
+    if input % 100 == 0
+      if input % 400 == 0
+        return true
+      end
+      return false
+    end
+    return true
   end
-  return output
+  return false
 end
 
-puts buzz?(476)
+puts leap(2244)
