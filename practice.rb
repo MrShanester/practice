@@ -487,5 +487,58 @@
 #   return array
 # end
 
-# p doubler([1, 2, 3, 4, 5], 0)
+# prices = [7,1,5,3,6,4]
+# 5 buy on day two, sell on five
 
+# make a def
+# loop through the array
+# make a variable for lowest
+# make a variable for highest
+# if index of lowest is smaller than index of highest, then return difference
+# if not, run loop again and the lowest number cannot equal previous lowest number.
+# .each loop
+# index loop
+# compare differences and store if index of larger number is larger than index of smaller number 
+# return difference
+
+# def stocks(array, high)
+#   lowest = array.first
+#   if high == array.first
+#     highest = array[1]
+#   else
+#     highest = array.first
+#   end
+#   array.each do |num|
+#     lowest = num if num < lowest 
+#     highest = num if num > highest && num != high
+#   end
+#   return (highest - lowest) if array.index(lowest) < array.index(highest) 
+#   stocks(array, highest)
+# end
+
+# input = [80, 100, 1, 2, 3, 4, 5]
+# output = 20
+
+# input = [7,1,5,3,6,4]
+# output = 5
+
+def stocks(array)
+  i = 1
+  loops = 1
+  output = 0
+  array.each do |num|
+    diff = 0
+    while i < array.length do
+      diff = (num - array[i]).abs if array.index(num) < i && (num - array[i]).abs > diff && num < array[i]
+      i += 1
+    end
+    loops += 1
+    i = loops
+    output = diff if diff > output
+  end
+  output
+end
+
+
+
+p stocks([80, 100, 1, 2, 3, 4, 5])
