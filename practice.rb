@@ -455,17 +455,37 @@
 
 #LeapYear
 
-def leap(input)
-  if input % 4 == 0
-    if input % 100 == 0
-      if input % 400 == 0
-        return true
-      end
-      return false
-    end
-    return true
-  end
-  return false
-end
+# def leap(input)
+#   if input % 4 == 0
+#     if input % 100 == 0
+#       if input % 400 == 0
+#         return true
+#       end
+#       return false
+#     end
+#     return true
+#   end
+#   return false
+# end
 
-puts leap(2244)
+# puts leap(2244)
+
+# # Recursive countdown
+
+# def count(number)
+#   puts number
+#   count(number - 1) unless number == 0
+# end
+
+# count(10)
+
+# Recursive array doubler
+
+# def doubler(array, index)
+#   array[index] *= 2
+#   doubler(array, index + 1) if index != array.length - 1  
+#   return array
+# end
+
+# p doubler([1, 2, 3, 4, 5], 0)
+
