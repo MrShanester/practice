@@ -522,23 +522,25 @@
 # input = [7,1,5,3,6,4]
 # output = 5
 
-def stocks(array)
-  i = 1
-  loops = 1
-  output = 0
-  array.each do |num|
-    diff = 0
-    while i < array.length do
-      diff = (num - array[i]).abs if array.index(num) < i && (num - array[i]).abs > diff && num < array[i]
-      i += 1
-    end
-    loops += 1
-    i = loops
-    output = diff if diff > output
-  end
-  output
-end
+# def stocks(array)
+#   i = 1
+#   loops = 1
+#   output = 0
+#   array.each do |num|
+#     diff = 0
+#     while i < array.length do
+#       diff = (num - array[i]).abs if array.index(num) < i && (num - array[i]).abs > diff && num < array[i]
+#       i += 1
+#     end
+#     loops += 1
+#     i = loops
+#     output = diff if diff > output
+#   end
+#   output
+# end
 
 
 
-p stocks([80, 100, 1, 2, 3, 4, 5])
+# p stocks([80, 100, 1, 2, 3, 4, 5])
+
+# Roman Numeral Counter
