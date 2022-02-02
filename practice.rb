@@ -559,16 +559,9 @@ def numeral(input)
   i = 0
   sum = 0
   while i < input.length do
-    clump = input[i] + input[i + 1] unless input[i + 1] == nil
-    unless numerals[clump] == nil && input[i + 1] == nil
-      sum += numerals[clump]
-      i += 2
-    else
-      sum += numerals[input[i]]
-      i += 1
-    end
+    clump = input[i] + input[i + 1] 
+    
   end
-  return sum
 end
 
-p numeral("IVX")
+p numeral("II")
