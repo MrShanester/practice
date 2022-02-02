@@ -545,23 +545,23 @@
 
 # Roman Numeral Counter
 
-i = 1
-v = 5
-x = 10
-l = 50
-c = 100
-d = 500
-m = 1000
-
 def numeral(input)
   numerals = {"I" => 1, "IV" => 4, "V" => 5, "IX" => 9, "X" => 10, "XL" => 40, "L" => 50, "XC" => 90, "C" => 100, "CD" => 400, "D" => 500, "CM" => 900, "M" => 1000
   }
   i = 0
   sum = 0
   while i < input.length do
-    clump = input[i] + input[i + 1] 
-    
+    clump = nil
+    clump = input[i] + input[i + 1] unless input[i + 1] == nil
+    if numerals[clump] != nil
+      sum += numerals[clump]
+      i += 2
+    else
+      sum += numerals[input[i]]
+      i += 1
+    end
   end
+  return sum
 end
 
-p numeral("II")
+p numeral("IVXL")
