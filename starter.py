@@ -1,3 +1,5 @@
+# Print out array
+
 def counter(input):
   i = 0
   while i < len(input):
