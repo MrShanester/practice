@@ -568,33 +568,40 @@
 
 # def pascals(num)
 #   output = [1]
-
-#   num.times do
-#     p output
-#     i = 1
-#     j = 0
-#     output.length.times do
-#       val = 1
-#       val = output[i] + output[i + 1] unless output[i + 1] == nil
-#       output.insert(val, i)
+#   return_array = [1]
+#   num.times do 
+#     i = 0
+#     p return_array
+#     return_array = [1]
+#     while i < output.length
+#       value = 1
+#       value = output[i] + output[i + 1] unless output[i + 1] == nil
+#       return_array << value
 #       i += 1
 #     end
+#     output = return_array
 #   end
-  
 # end
 
 # pascals(5)
 
-def happy?(integer)
-  val = integer.to_s
-  sum = 0
-  i = 0
-  while i < val.length
-    sum += val[i].to_i * val[i].to_i
-    i += 1
-  end
-  return true if sum == 1
-  happy?(sum)
+# def happy?(integer)
+#   val = integer.to_s
+#   sum = 0
+#   i = 0
+#   while i < val.length
+#     sum += val[i].to_i * val[i].to_i
+#     i += 1
+#   end
+#   return true if sum == 1
+#   happy?(sum)
+# end
+
+# p happy?(2)
+
+# wrote this
+def generate(num_rows)
+  num_rows.times.map{|n|[p=1]+(1..n).map{|k|p=p*(n-k+1)/k}}
 end
 
-p happy?(2)
+p generate(5)
