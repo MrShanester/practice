@@ -545,23 +545,56 @@
 
 # Roman Numeral Counter
 
-def numeral(input)
-  numerals = {"I" => 1, "IV" => 4, "V" => 5, "IX" => 9, "X" => 10, "XL" => 40, "L" => 50, "XC" => 90, "C" => 100, "CD" => 400, "D" => 500, "CM" => 900, "M" => 1000
-  }
-  i = 0
+# def numeral(input)
+#   numerals = {"I" => 1, "IV" => 4, "V" => 5, "IX" => 9, "X" => 10, "XL" => 40, "L" => 50, "XC" => 90, "C" => 100, "CD" => 400, "D" => 500, "CM" => 900, "M" => 1000
+#   }
+#   i = 0
+#   sum = 0
+#   while i < input.length do
+#     clump = nil
+#     clump = input[i] + input[i + 1] unless input[i + 1] == nil
+#     unless numerals[clump] == nil
+#       sum += numerals[clump]
+#       i += 2
+#     else
+#       sum += numerals[input[i]]
+#       i += 1
+#     end
+#   end
+#   sum
+# end
+
+# p numeral("MMXXI")
+
+# def pascals(num)
+#   output = [1]
+
+#   num.times do
+#     p output
+#     i = 1
+#     j = 0
+#     output.length.times do
+#       val = 1
+#       val = output[i] + output[i + 1] unless output[i + 1] == nil
+#       output.insert(val, i)
+#       i += 1
+#     end
+#   end
+  
+# end
+
+# pascals(5)
+
+def happy?(integer)
+  val = integer.to_s
   sum = 0
-  while i < input.length do
-    clump = nil
-    clump = input[i] + input[i + 1] unless input[i + 1] == nil
-    unless numerals[clump] == nil
-      sum += numerals[clump]
-      i += 2
-    else
-      sum += numerals[input[i]]
-      i += 1
-    end
+  i = 0
+  while i < val.length
+    sum += val[i].to_i * val[i].to_i
+    i += 1
   end
-  sum
+  return true if sum == 1
+  happy?(sum)
 end
 
-p numeral("MMXXI")
+p happy?(2)
