@@ -613,23 +613,42 @@
 # input = "abcabcbba"
 # output = 3
 
-def longest_sub(input)
-  i = 1
-  val = 1
-  hash = {input[0] => true}
-  output = 0
-  while i < input.length
-    if hash[input[i]]
-      output = val if val > output
-      val = 0
-      i += 1
-    else
-      hash[input[i]] = true
-      val += 1
-      i += 1
-    end
+# def longest_sub(input)
+#   i = 1
+#   val = 1
+#   hash = {input[0] => true}
+#   output = 0
+#   while i < input.length
+#     if hash[input[i]]
+#       output = val if val > output
+#       val = 0
+#       i += 1
+#     else
+#       hash[input[i]] = true
+#       val += 1
+#       i += 1
+#     end
+#   end
+#   output
+# end
+
+# p longest_sub("bbbbbbbbb")
+
+# median of two sorted arrays
+
+def median(array_one, array_two)
+  output_array = []
+  array_one.each do |num|
+    output_array << num 
   end
-  output
+  array_two.each do |num|
+    output_array << num 
+  end
+  output_array = output_array.sort
+  median = (output_array.length - 1) / 2
+  return output_array[median] if output_array.length % 2 != 0
+  output = (output_array[median].to_f + output_array[median + 1].to_f) /  2
+  return output
 end
 
-p longest_sub("bbbbbbbbb")
+p median([1,2,3], [4,5,6])
