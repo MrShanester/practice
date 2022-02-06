@@ -655,30 +655,55 @@
 
 # zigzagstringConversion
 
-def convert(string, lines)
-  output = ""
-  hash = {}
-  zag = 0
-  lines.times do
-    i = 0
-    zag += 1
-    count = 1
-    tick = true
-    while i < string.length
-      hash[string[i]] = count
-      output += string[i] if hash[string[i]] == zag
-      tick = false if count == lines
-      if tick
-        count += 1
+# def convert(string, lines)
+#   output = ""
+#   hash = {}
+#   zag = 0
+#   lines.times do
+#     i = 0
+#     zag += 1
+#     count = 1
+#     tick = true
+#     while i < string.length
+#       hash[string[i]] = count
+#       output += string[i] if hash[string[i]] == zag
+#       tick = false if count == lines
+#       if tick
+#         count += 1
+#       else
+#         count -= 1
+#         tick = true if count == 1
+#       end
+#       i += 1
+#       hash = {}
+#     end
+#   end
+#   return output
+# end
+
+# p convert("PAYPALISHIRING", 4)
+
+# Given an input string s and a pattern p, implement regular expression matching with support for '.' and '*' where:
+
+def matching?(string, pattern)
+  compare_string = ""
+  i = 0
+  while i < pattern.length
+    if pattern[i] == "*"
+      if pattern[i - 1] == "."
+        compare_string += string[i] 
       else
-        count -= 1
-        tick = true if count == 1
+        compare_string += pattern[i - 1]
       end
-      i += 1
-      hash = {}
+    elsif pattern[i] == "."
+      compare_string += string[i]
+    else
+      compare_string += pattern[i]
     end
+    i += 1
   end
-  return output
+  return true if string == compare_string
+  false
 end
 
-p convert("PAYPALISHIRING", 4)
+p matching?("aa", ".*")
