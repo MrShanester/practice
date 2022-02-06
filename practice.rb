@@ -672,7 +672,7 @@ def convert(string, lines)
         count += 1
       else
         count -= 1
-        tick = true if count == lines
+        tick = true if count == 1
       end
       i += 1
       hash = {}
