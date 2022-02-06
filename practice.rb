@@ -685,25 +685,28 @@
 
 # Given an input string s and a pattern p, implement regular expression matching with support for '.' and '*' where:
 
-def matching?(string, pattern)
-  compare_string = ""
-  i = 0
-  while i < pattern.length
-    if pattern[i] == "*"
-      if pattern[i - 1] == "."
-        compare_string += string[i] 
-      else
-        compare_string += pattern[i - 1]
-      end
-    elsif pattern[i] == "."
-      compare_string += string[i]
-    else
-      compare_string += pattern[i]
-    end
-    i += 1
-  end
-  return true if string == compare_string
-  false
-end
+# def matching?(string, pattern)
+#   compare_string = ""
+#   i = 0
+#   while i < pattern.length
+#     if pattern[i] == "*"
+#       if pattern[i - 1] == "."
+#         compare_string += string[i] 
+#       else
+#         compare_string += pattern[i - 1]
+#       end
+#     elsif pattern[i] == "."
+#       compare_string += string[i]
+#     else
+#       compare_string += pattern[i]
+#     end
+#     i += 1
+#   end
+#   return true if string == compare_string
+#   false
+# end
 
-p matching?("aa", ".*")
+# p matching?("aa", ".*")
+
+# Write a function to find the longest common prefix string amongst an array of strings.
+
