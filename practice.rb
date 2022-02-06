@@ -636,19 +636,49 @@
 
 # median of two sorted arrays
 
-def median(array_one, array_two)
-  output_array = []
-  array_one.each do |num|
-    output_array << num 
+# def median(array_one, array_two)
+#   output_array = []
+#   array_one.each do |num|
+#     output_array << num 
+#   end
+#   array_two.each do |num|
+#     output_array << num 
+#   end
+#   output_array = output_array.sort
+#   median = (output_array.length - 1) / 2
+#   return output_array[median] if output_array.length % 2 != 0
+#   output = (output_array[median].to_f + output_array[median + 1].to_f) /  2
+#   return output
+# end
+
+# p median([1,2,3], [4,5,6])
+
+# zigzagstringConversion
+
+def convert(string, lines)
+  output = ""
+  hash = {}
+  zag = 0
+  lines.times do
+    i = 0
+    zag += 1
+    count = 1
+    tick = true
+    while i < string.length
+      hash[string[i]] = count
+      output += string[i] if hash[string[i]] == zag
+      tick = false if count == lines
+      if tick
+        count += 1
+      else
+        count -= 1
+        tick = true if count == lines
+      end
+      i += 1
+      hash = {}
+    end
   end
-  array_two.each do |num|
-    output_array << num 
-  end
-  output_array = output_array.sort
-  median = (output_array.length - 1) / 2
-  return output_array[median] if output_array.length % 2 != 0
-  output = (output_array[median].to_f + output_array[median + 1].to_f) /  2
   return output
 end
 
-p median([1,2,3], [4,5,6])
+p convert("PAYPALISHIRING", 4)
