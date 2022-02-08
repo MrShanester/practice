@@ -733,10 +733,14 @@
 
 def power(num, power)
   output = num
-  (power - 1).times do 
+  (power.abs() - 1).times do 
     output = output * num
   end
-  return output
+  if power >= 0
+    return output
+  else
+    return "1/#{output} or #{1 / output.to_f}" 
+  end
 end
 
 p power(2, 10)
