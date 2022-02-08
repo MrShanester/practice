@@ -710,21 +710,33 @@
 
 # Write a function to find the longest common prefix string amongst an array of strings.
 
-def prefix?(array)
-  i = 0
-  output = ""
-  array[0][i].length.times do
-    temp = array[0][i]
-    boolean = true
-    array.each do |string|
-      if string[i] != temp 
-        boolean = false
-      end
-    end
-    output += array[0][i] if boolean == true
-    i += 1
+# def prefix?(array)
+#   i = 0
+#   output = ""
+#   array[0][i].length.times do
+#     temp = array[0][i]
+#     boolean = true
+#     array.each do |string|
+#       if string[i] != temp 
+#         boolean = false
+#       end
+#     end
+#     output += array[0][i] if boolean == true
+#     i += 1
+#   end
+#   return output 
+# end
+
+# p prefix?(["home", "hope", "hole"])
+
+# to the power of
+
+def power(num, power)
+  output = num
+  (power - 1).times do 
+    output = output * num
   end
-  return output 
+  return output
 end
 
-p prefix?(["home", "hope", "hole"])
+p power(2, 10)
