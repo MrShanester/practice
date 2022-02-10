@@ -775,17 +775,17 @@
 
 # Eradicate Duplicates
 
-def eradicate(input)
-  hash = {}
-  output = []
-  input.each do |num|
-    output << num unless hash[num]
-    hash[num] = true
-  end
-  return output
-end
+# def eradicate(input)
+#   hash = {}
+#   output = []
+#   input.each do |num|
+#     output << num unless hash[num]
+#     hash[num] = true
+#   end
+#   return output
+# end
 
-p eradicate([1, 2, 2, 3, 3, 4, 4, 5])
+# p eradicate([1, 2, 2, 3, 3, 4, 4, 5])
 
 # Negotiating salaries, where do I start
 
@@ -798,3 +798,25 @@ p eradicate([1, 2, 2, 3, 3, 4, 4, 5])
 #I.E. What is your strengths, what are your skills, what makes you special for the job,
 
 #glassdoor yo check pruces and salary
+
+# Reverse Integer
+
+def rev(integer)
+  string = integer.to_s
+  i = string.length - 1
+  output = ""
+  val = false
+  while i >= 0
+    if string[i] == "-"
+      val = true
+      i -= 1
+    else
+      output +=  string[i]
+      i -= 1
+    end
+  end
+  return "-" + output if val == true
+  return output
+end
+
+p rev(-123)
