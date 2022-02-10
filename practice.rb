@@ -750,25 +750,39 @@
 # Input: n = 4
 # Output: "1211"
 
-def count_n_say(times, input)
-  return input if times == 1
-  count_n_say(times - 2, "21") if input == "1"
-  var = 0
-  string = ""
-  i = 0
-  while i < input.length
-    if input[i] == input[i + 1]
-      var += 1
-    end
-    if input[i] != input[i + 1]
-      var += 1
-      string += var.to_s 
-      string += input[i].to_s
-      var = 0
-    end
-    i += 1
+# def count_n_say(times, input)
+#   return input if times == 1
+#   count_n_say(times - 2, "21") if input == "1"
+#   var = 0
+#   string = ""
+#   i = 0
+#   while i < input.length
+#     if input[i] == input[i + 1]
+#       var += 1
+#     end
+#     if input[i] != input[i + 1]
+#       var += 1
+#       string += var.to_s 
+#       string += input[i].to_s
+#       var = 0
+#     end
+#     i += 1
+#   end
+#   count_n_say(times - 1, string)
+# end
+
+# p count_n_say(10, "1")
+
+# Eradicate Duplicates
+
+def eradicate(input)
+  hash = {}
+  output = []
+  input.each do |num|
+    output << num unless hash[num]
+    hash[num] = true
   end
-  count_n_say(times - 1, string)
+  return output
 end
 
-p count_n_say(10, "1")
+p eradicate([1, 2, 2, 3, 3, 4, 4, 5])
