@@ -731,16 +731,44 @@
 
 # to the power of
 
-def power(num, power)
-  output = num
-  (power.abs() - 1).times do 
-    output = output * num
+# def power(num, power)
+#   output = num
+#   (power.abs() - 1).times do 
+#     output = output * num
+#   end
+#   if power >= 0
+#     return output
+#   else
+#     return "1/#{output} or #{1 / output.to_f}" 
+#   end
+# end
+
+# p power(2, 10)
+
+# Count and Say
+
+# Input: n = 4
+# Output: "1211"
+
+def count_n_say(times, input)
+  return input if times == 1
+  count_n_say(times - 2, "21") if input == "1"
+  var = 0
+  string = ""
+  i = 0
+  while i < input.length
+    if input[i] == input[i + 1]
+      var += 1
+    end
+    if input[i] != input[i + 1]
+      var += 1
+      string += var.to_s 
+      string += input[i].to_s
+      var = 0
+    end
+    i += 1
   end
-  if power >= 0
-    return output
-  else
-    return "1/#{output} or #{1 / output.to_f}" 
-  end
+  count_n_say(times - 1, string)
 end
 
-p power(2, 10)
+p count_n_say(10, "1")
