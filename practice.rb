@@ -786,3 +786,15 @@ def eradicate(input)
 end
 
 p eradicate([1, 2, 2, 3, 3, 4, 4, 5])
+
+# Negotiating salaries, where do I start
+
+# Is networking just as important as applications
+
+# Should I branch out into other application services other than indeed or linkedin
+
+# When I talk in interviews I tend to overshare, and then when an interviewr asks a similiar question I am left with no answers.
+
+#I.E. What is your strengths, what are your skills, what makes you special for the job,
+
+#glassdoor yo check pruces and salary
