@@ -801,22 +801,43 @@
 
 # Reverse Integer
 
-def rev(integer)
-  string = integer.to_s
-  i = string.length - 1
-  output = ""
-  val = false
-  while i >= 0
-    if string[i] == "-"
-      val = true
-      i -= 1
-    else
-      output +=  string[i]
-      i -= 1
+# def rev(integer)
+#   string = integer.to_s
+#   i = string.length - 1
+#   output = ""
+#   val = false
+#   while i >= 0
+#     if string[i] == "-"
+#       val = true
+#       i -= 1
+#     else
+#       output +=  string[i]
+#       i -= 1
+#     end
+#   end
+#   return "-" + output if val == true
+#   return output
+# end
+
+# p rev(-123)
+
+def valid_parentheses(input)
+  stack = []
+  i = 0
+  while i < input.length
+    if input[i] == "(" || input[i] == "[" || input[i] == "{"
+      stack << input[i]
+    elsif input[i] == ")" && stack.last == "("
+      stack.pop()
+    elsif input[i] == "]" && stack.last == "["
+      stack.pop()
+    elsif input[i] == "}" && stack.last == "{"
+      stack.pop()
     end
+    i += 1
   end
-  return "-" + output if val == true
-  return output
+  return true if stack == []
+  false
 end
 
-p rev(-123)
+p valid_parentheses("({})")
