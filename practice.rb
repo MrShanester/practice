@@ -821,23 +821,32 @@
 
 # p rev(-123)
 
-def valid_parentheses(input)
-  stack = []
-  i = 0
-  while i < input.length
-    if input[i] == "(" || input[i] == "[" || input[i] == "{"
-      stack << input[i]
-    elsif input[i] == ")" && stack.last == "("
-      stack.pop()
-    elsif input[i] == "]" && stack.last == "["
-      stack.pop()
-    elsif input[i] == "}" && stack.last == "{"
-      stack.pop()
-    end
-    i += 1
-  end
-  return true if stack == []
-  false
+# def valid_parentheses(input)
+#   stack = []
+#   i = 0
+#   while i < input.length
+#     if input[i] == "(" || input[i] == "[" || input[i] == "{"
+#       stack << input[i]
+#     elsif input[i] == ")" && stack.last == "("
+#       stack.pop()
+#     elsif input[i] == "]" && stack.last == "["
+#       stack.pop()
+#     elsif input[i] == "}" && stack.last == "{"
+#       stack.pop()
+#     end
+#     i += 1
+#   end
+#   return true if stack == []
+#   false
+# end
+
+# p valid_parentheses("({})")
+
+# Checks to see if the writer of the message is civilised
+
+def civilised?(message)
+  return "Quite Civilised" if message.include?("Sir") || message.include?("Madam") || message.include?("Dear") || message.include?("Your's Truly") || message.include?("quite") || message.include?("apt") || message.include?("Highness") 
+  return "Quite Uncivilised"
 end
 
-p valid_parentheses("({})")
+ p civilised?("Your's Truly, Shane Nicholson")
