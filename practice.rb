@@ -844,9 +844,27 @@
 
 # Checks to see if the writer of the message is civilised
 
-def civilised?(message)
-  return "Quite Civilised" if message.include?("Sir") || message.include?("Madam") || message.include?("Dear") || message.include?("Your's Truly") || message.include?("quite") || message.include?("apt") || message.include?("Highness") 
-  return "Quite Uncivilised"
+# def civilised?(message)
+#   return "Quite Civilised" if message.include?("Sir") || message.include?("Madam") || message.include?("Dear") || message.include?("Your's Truly") || message.include?("quite") || message.include?("apt") || message.include?("Highness") 
+#   return "Quite Uncivilised"
+# end
+
+#  p civilised?("Your's Truly, Shane Nicholson")
+
+# Implements advanced calculations
+
+def civilised_v2?(message)
+  civil = {"sir" => true, "madam" => true, "dear" => true, "your's" => true, "truly" => true, "quite" => true, "apt" => true, "highness" => true, "queen" => true, "king" => true,}
+  word_count = message.split(' ').length
+  message_array = message.split(' ')
+  civilised_words = 0
+  message_array.each do |word|
+    if civil[word.downcase]
+      civilised_words += 1
+    end
+  end
+  return "Quite Civilised" if word_count < (civilised_words * 10)
+  "Quite Uncivilised"
 end
 
- p civilised?("Your's Truly, Shane Nicholson")
+p civilised_v2?("Sir you are hated.")
