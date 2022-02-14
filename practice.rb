@@ -871,18 +871,32 @@
 
 # remove duplicates from a sorted array
 
-def dupe(input)
+# def dupe(input)
+#   i = 0
+#   output = []
+#   hash = {}
+#   while i < input.length 
+#     hash[input[i]] = true
+#     i += 1
+#   end
+#   hash.each do |k, v|
+#     output << k
+#   end
+#   return output
+# end
+
+# p dupe([1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5])
+
+#return index or target index in a sorted array
+
+def target(num, array)
+  return array.find_index(num) if array.include?(num)
   i = 0
-  output = []
-  hash = {}
-  while i < input.length 
-    hash[input[i]] = true
+  return 0 if num < array.first
+  while i < array.length
+    return (i + 1) if num > array[i] && num < array[i + 1]
     i += 1
   end
-  hash.each do |k, v|
-    output << k
-  end
-  return output
 end
 
-p dupe([1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5])
+p target(6, [1, 2, 3, 4, 5, 7])
