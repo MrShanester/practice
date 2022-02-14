@@ -853,18 +853,36 @@
 
 # Implements advanced calculations
 
-def civilised_v2?(message)
-  civil = {"sir" => true, "madam" => true, "dear" => true, "your's" => true, "truly" => true, "quite" => true, "apt" => true, "highness" => true, "queen" => true, "king" => true,}
-  word_count = message.split(' ').length
-  message_array = message.split(' ')
-  civilised_words = 0
-  message_array.each do |word|
-    if civil[word.downcase]
-      civilised_words += 1
-    end
+# def civilised_v2?(message)
+#   civil = {"sir" => true, "madam" => true, "dear" => true, "your's" => true, "truly" => true, "quite" => true, "apt" => true, "highness" => true, "queen" => true, "king" => true,}
+#   word_count = message.split(' ').length
+#   message_array = message.split(' ')
+#   civilised_words = 0
+#   message_array.each do |word|
+#     if civil[word.downcase]
+#       civilised_words += 1
+#     end
+#   end
+#   return "Quite Civilised" if word_count < (civilised_words * 10)
+#   "Quite Uncivilised"
+# end
+
+# p civilised_v2?("Sir you are hated.")
+
+# remove duplicates from a sorted array
+
+def dupe(input)
+  i = 0
+  output = []
+  hash = {}
+  while i < input.length 
+    hash[input[i]] = true
+    i += 1
   end
-  return "Quite Civilised" if word_count < (civilised_words * 10)
-  "Quite Uncivilised"
+  hash.each do |k, v|
+    output << k
+  end
+  return output
 end
 
-p civilised_v2?("Sir you are hated.")
+p dupe([1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5])
