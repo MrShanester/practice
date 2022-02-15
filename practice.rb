@@ -906,10 +906,11 @@ def hangman(word, guess)
   puts "Guess a letter"
   letter = gets.chomp
   if word.include?(letter)
-    placement = word.find_index(letter)
+    placement = word.split('').find_index(letter)
     guess[placement] = letter
   end
   puts guess
   hangman(word, guess)
 end
 
+puts hangman("forest", "      ")
