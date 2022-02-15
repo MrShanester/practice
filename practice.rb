@@ -889,14 +889,27 @@
 
 #return index or target index in a sorted array
 
-def target(num, array)
-  return array.find_index(num) if array.include?(num)
-  i = 0
-  return 0 if num < array.first
-  while i < array.length
-    return (i + 1) if num > array[i] && num < array[i + 1]
-    i += 1
+# def target(num, array)
+#   return array.find_index(num) if array.include?(num)
+#   i = 0
+#   return 0 if num < array.first
+#   while i < array.length
+#     return (i + 1) if num > array[i] && num < array[i + 1]
+#     i += 1
+#   end
+# end
+
+# p target(6, [1, 2, 3, 4, 5, 7])
+
+def hangman(word, guess)
+  return "Winner" if word == guess
+  puts "Guess a letter"
+  letter = gets.chomp
+  if word.include?(letter)
+    placement = word.find_index(letter)
+    guess[placement] = letter
   end
+  puts guess
+  hangman(word, guess)
 end
 
-p target(6, [1, 2, 3, 4, 5, 7])
