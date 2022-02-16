@@ -901,16 +901,28 @@
 
 # p target(6, [1, 2, 3, 4, 5, 7])
 
-def hangman(word, guess)
-  return "Winner" if word == guess
-  puts "Guess a letter"
-  letter = gets.chomp
-  if word.include?(letter)
-    placement = word.split('').find_index(letter)
-    guess[placement] = letter
+# def hangman(word, guess)
+#   return "Winner" if word == guess
+#   puts "Guess a letter"
+#   letter = gets.chomp
+#   if word.include?(letter)
+#     placement = word.split('').find_index(letter)
+#     guess[placement] = letter
+#   end
+#   puts guess
+#   hangman(word, guess)
+# end
+
+# puts hangman("forest", "      ")
+
+#mean
+
+def mean(input)
+  output = 0
+  input.each do |num|
+    output += num
   end
-  puts guess
-  hangman(word, guess)
+  return output / input.length
 end
 
-puts hangman("forest", "      ")
+p mean([1,2,3,4,5])
