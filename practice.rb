@@ -917,12 +917,23 @@
 
 #mean
 
-def mean(input)
-  output = 0
-  input.each do |num|
-    output += num
+# def mean(input)
+#   output = 0
+#   input.each do |num|
+#     output += num
+#   end
+#   return output / input.length
+# end
+
+# p mean([1,2,3,4,5])
+
+def median(input)
+  middle = (input.length / 2)
+  if input.length % 2 == 0
+    return (input[middle].to_f + input[middle - 1].to_f) / 2
+  else
+    return input[middle]
   end
-  return output / input.length
 end
 
-p mean([1,2,3,4,5])
+p median([1, 2, 3, 4, 5, 6, 7])
