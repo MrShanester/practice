@@ -938,13 +938,19 @@
 
 # p median([1, 2, 3, 4, 5, 6, 7])
 
-def opinion()
-  puts "Whats your opinion? "
-  opinion = gets.chomp
-  puts"Your opinion, '#{opinion}', is actually an objective fact, and it's the best fact in the world. You are special and smart."
-end
+# def opinion()
+#   puts "Whats your opinion? "
+#   opinion = gets.chomp
+#   puts"Your opinion, '#{opinion}', is actually an objective fact, and it's the best fact in the world. You are special and smart."
+# end
 
-opinion()
+# opinion()
+
+require 'faker'
+
+10.times do
+  puts Faker::Name.name
+end
 
 
 
