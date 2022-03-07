@@ -960,14 +960,16 @@
 
 # find_longest_word("Write a method called find_longest_word, which will accept a string as a parameter")
 
-def find_longest_word(string)
-  separate = string.split(" ")
-  separate.sort_by! { |separate| separate.size }
-  answer = separate.reverse
-  answer[0]
-end
+# def find_longest_word(string)
+#   separate = string.split(" ")
+#   separate.sort_by! { |separate| separate.size }
+#   answer = separate.reverse
+#   answer[0]
+# end
 
-p find_longest_word("What is the word in this phrase? longest")
+# p find_longest_word("What is the word in this phrase? longest")
+
+p 10.times.map{rand(10)}.join.to_i
 
 
 
