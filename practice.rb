@@ -969,7 +969,31 @@
 
 # p find_longest_word("What is the word in this phrase? longest")
 
-p 10.times.map{rand(10)}.join.to_i
+# p 10.times.map{rand(10)}.join.to_i
 
+# diversified into otta, linkedin, and indeed
+# started recieving takehome assignments
+# expanded my linkedin reachouts (bethel tech, angel studios)
+# become ingrained into meetups, (coding book club)
+# updated linkedin profile
+
+
+# Finish portfolio
+# message one person a day
+# add 
+
+# return the median of two sorted arrays
+
+# input 1 = [1,2,3]
+# input 2 = [4,5,6]
+# expected output = 3.5
+
+def median(array_one, array_two)
+  array_three = (array_one + array_two).sort
+  return array_three[array_three.length / 2] if array_three.length.odd?
+  return (array_three[array_three.length / 2].to_f + array_three[(array_three.length / 2) - 1]).to_f / 2
+end
+
+puts median([1,2,3], [4,5,6])
 
 
