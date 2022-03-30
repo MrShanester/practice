@@ -46,4 +46,15 @@ function fizzBuzz(input) {
   }
 }
 
-fizzBuzz(7);
+// fizzBuzz(7);
+
+function forEache(input) {
+  var returnArray = [];
+  input.forEach(function (letter) {
+    var newLetter = letter + 14;
+    returnArray.push(newLetter);
+  });
+  return returnArray;
+}
+
+console.log(forEache([3, 76, 6, 3]));
