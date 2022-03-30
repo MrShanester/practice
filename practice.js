@@ -68,4 +68,24 @@ function reverse(input) {
   return returnArray;
 }
 
-console.log(reverse([1, 2, 3, 4, 5]));
+// console.log(reverse([1, 2, 3, 4, 5]));
+
+function p(input) {
+  console.log(input);
+}
+
+// p("Hi");
+
+// return two smallest numbers in an array
+
+function smallest(input) {
+  var outputArray = [];
+  var sortedArray = input.sort(function (a, b) {
+    return a - b;
+  });
+  outputArray.push(sortedArray[0]);
+  outputArray.push(sortedArray[1]);
+  return outputArray;
+}
+
+console.log(smallest([12, 2, 3, 4, 1]));
