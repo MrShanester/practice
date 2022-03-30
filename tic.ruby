@@ -10,10 +10,6 @@ class Board
     @board
   end
 
-  def board=(board)
-    @board
-  end
-
   def positions
     @positions
   end

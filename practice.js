@@ -24,8 +24,26 @@ function hundredEven() {
   for (let i = 0; i < 101; i++) {
     if (i % 2 === 0) {
       console.log(i);
+    } else {
+      console.log("NOT EVEN");
     }
   }
 }
 
-hundredEven();
+// hundredEven();
+
+// fizzbuzz
+
+function fizzBuzz(input) {
+  if (input % 15 === 0) {
+    console.log("fizzbuzz");
+  } else if (input % 5 === 0) {
+    console.log("fizz");
+  } else if (input % 3 === 0) {
+    console.log("buzz");
+  } else {
+    console.log("no buzz");
+  }
+}
+
+fizzBuzz(7);
