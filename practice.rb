@@ -988,12 +988,19 @@
 # input 2 = [4,5,6]
 # expected output = 3.5
 
-def median(array_one, array_two)
-  array_three = (array_one + array_two).sort
-  return array_three[array_three.length / 2] if array_three.length.odd?
-  return (array_three[array_three.length / 2].to_f + array_three[(array_three.length / 2) - 1]).to_f / 2
+# def median(array_one, array_two)
+#   array_three = (array_one + array_two).sort
+#   return array_three[array_three.length / 2] if array_three.length.odd?
+#   return (array_three[array_three.length / 2].to_f + array_three[(array_three.length / 2) - 1]).to_f / 2
+# end
+
+# puts median([1,2,3], [4,5,6])
+
+# return the median of two sorted arrays, the complexity should be Olog(m + n). 
+
+def mutation(string_one, string_two)
+  return true if string_one.include?(string_two)
+  false
 end
 
-puts median([1,2,3], [4,5,6])
-
-
+p mutation("hello", "lleh")
