@@ -57,4 +57,15 @@ function forEache(input) {
   return returnArray;
 }
 
-console.log(forEache([3, 76, 6, 3]));
+// console.log(forEache([3, 76, 6, 3]));
+
+//return reverse
+function reverse(input) {
+  var returnArray = [];
+  for (let i = input.length - 1; i >= 0; i--) {
+    returnArray.push(input[i]);
+  }
+  return returnArray;
+}
+
+console.log(reverse([1, 2, 3, 4, 5]));
