@@ -78,7 +78,7 @@ function p(input) {
 
 // return two smallest numbers in an array
 
-function smallest(input) {
+var smallest = (input) => {
   var outputArray = [];
   var sortedArray = input.sort(function (a, b) {
     return a - b;
@@ -86,6 +86,16 @@ function smallest(input) {
   outputArray.push(sortedArray[0]);
   outputArray.push(sortedArray[1]);
   return outputArray;
+};
+
+// console.log(smallest([12, 2, 3, 4, 1]));
+
+function skippedLetter(string) {
+  for (var i = 0; i < string.length - 1; i++) {
+    if (string.charCodeAt(i + 1) - string.charCodeAt(i) !== 1) {
+      return String.fromCharCode(string.charCodeAt(i) + 1);
+    }
+  }
 }
 
-console.log(smallest([12, 2, 3, 4, 1]));
+console.log(skippedLetter("abe"));
