@@ -998,9 +998,24 @@
 
 # return the median of two sorted arrays, the complexity should be Olog(m + n). 
 
-def mutation(string_one, string_two)
-  return true if string_one.include?(string_two)
-  false
+# def mutation(string_one, string_two)
+#   return true if string_one.include?(string_two)
+#   false
+# end
+
+# p mutation("hello", "lleh")
+
+def palanindrome_number(num)
+  string = num.to_s
+  array = string.split( "" )
+  reverse_array =  []
+  j = array.length - 1
+  array.length.times do
+    reverse_array << array[j]
+    j -= 1
+  end
+  return true if array.join == reverse_array.join
+  false  
 end
 
-p mutation("hello", "lleh")
+print palanindrome_number(121)
